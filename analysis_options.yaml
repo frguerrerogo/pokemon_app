@@ -56,3 +56,4 @@ linter:
     always_use_package_imports: true
     require_trailing_commas: true
     depend_on_referenced_packages: true
+    sort_pub_dependencies: false
