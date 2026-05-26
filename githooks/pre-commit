@@ -1,0 +1,18 @@
+#!/bin/sh
+set -e
+
+if command -v fvm >/dev/null 2>&1; then
+  FLUTTER="fvm flutter"
+else
+  FLUTTER="flutter"
+fi
+
+$FLUTTER analyze > /dev/null 2>&1 || {
+  echo "❌ flutter analyze failed — run 'flutter analyze' to see issues." >&2
+  exit 1
+}
+
+$FLUTTER test --no-pub > /dev/null 2>&1 || {
+  echo "❌ flutter test failed — run 'flutter test' to see failures." >&2
+  exit 1
+}
