@@ -18,6 +18,6 @@ class LoginUseCase implements UseCase<UserEntity, LoginUseCaseParams> {
 
   @override
   Future<UserEntity> call(LoginUseCaseParams params) {
-    return _authRepository.login(params.email, params.password);
+    return _authRepository.login(email: params.email, password: params.password);
   }
 }

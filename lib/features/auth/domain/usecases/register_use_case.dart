@@ -19,6 +19,6 @@ class RegisterUseCase implements UseCase<UserEntity, RegisterUseCaseParams> {
 
   @override
   Future<UserEntity> call(RegisterUseCaseParams params) {
-    return _authRepository.register(params.email, params.password);
+    return _authRepository.register(email: params.email, password: params.password);
   }
 }

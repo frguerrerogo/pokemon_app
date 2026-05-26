@@ -1,6 +1,10 @@
-/// Core exports for the core feature.
-/// Exposes constants, dependency injection, and networking for cross-feature use.
+/// Core exports.
 library;
 
+export 'errors/auth_exception_mapper.dart';
+export 'errors/failures.dart';
+export 'extensions/extensions.dart';
+export 'services/hive_service.dart';
 export 'shared/mapper.dart';
 export 'shared/usecase.dart';
+export 'theme/theme.dart';
