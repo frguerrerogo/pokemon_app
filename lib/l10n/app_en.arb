@@ -58,5 +58,14 @@
   "homeSubtitle": "Explore and discover Pokémon",
   "homeLogoutMessage": "Are you sure you want to log out?",
   "homeOfflineMessage": "No internet connection",
-  "homeErrorTitle": "An error has occurred"
+  "homeErrorTitle": "An error has occurred",
+  "height": "Height",
+  "weight": "Weight",
+  "stats": "Stats",
+  "hp": "HP",
+  "attack": "Attack",
+  "defense": "Defense",
+  "special_attack": "Special Attack",
+  "special_defense": "Special Defense",
+  "speed": "Speed"
 }

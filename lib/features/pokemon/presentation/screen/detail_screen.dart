@@ -55,7 +55,7 @@ class DetailScreen extends GetView<DetailController> {
                     ),
                     const SizedBox(height: AppSpacing.md),
                     Text(
-                      'Error',
+                      context.l10n.error,
                       style: context.typography.titleMedium?.copyWith(
                         color: context.colorScheme.onSurface,
                         fontWeight: FontWeight.bold,
@@ -83,7 +83,7 @@ class DetailScreen extends GetView<DetailController> {
                           elevation: 0,
                         ),
                         child: Text(
-                          'Reintentar',
+                          context.l10n.retry,
                           style: TextStyle(color: context.colorScheme.onPrimary),
                         ),
                       ),
@@ -162,7 +162,7 @@ class DetailScreen extends GetView<DetailController> {
                           children: [
                             Expanded(
                               child: _InfoCard(
-                                label: 'Altura',
+                                label: context.l10n.height,
                                 value: '${pokemon.height.toStringAsFixed(1)} m',
                                 context: context,
                               ),
@@ -170,7 +170,7 @@ class DetailScreen extends GetView<DetailController> {
                             const SizedBox(width: AppSpacing.md),
                             Expanded(
                               child: _InfoCard(
-                                label: 'Peso',
+                                label: context.l10n.weight,
                                 value: '${pokemon.weight.toStringAsFixed(1)} kg',
                                 context: context,
                               ),
@@ -180,7 +180,7 @@ class DetailScreen extends GetView<DetailController> {
                         const SizedBox(height: AppSpacing.xl),
                         // Stats
                         Text(
-                          'Estadísticas',
+                          context.l10n.stats,
                           style: context.typography.titleMedium?.copyWith(
                             color: context.colorScheme.onSurface,
                             fontWeight: FontWeight.bold,
@@ -188,32 +188,32 @@ class DetailScreen extends GetView<DetailController> {
                         ),
                         const SizedBox(height: AppSpacing.md),
                         _StatBar(
-                          label: 'HP',
+                          label: context.l10n.hp,
                           value: pokemon.hp,
                           context: context,
                         ),
                         _StatBar(
-                          label: 'Ataque',
+                          label: context.l10n.attack,
                           value: pokemon.attack,
                           context: context,
                         ),
                         _StatBar(
-                          label: 'Defensa',
+                          label: context.l10n.defense,
                           value: pokemon.defense,
                           context: context,
                         ),
                         _StatBar(
-                          label: 'Ataque Especial',
+                          label: context.l10n.special_attack,
                           value: pokemon.specialAttack,
                           context: context,
                         ),
                         _StatBar(
-                          label: 'Defensa Especial',
+                          label: context.l10n.special_defense,
                           value: pokemon.specialDefense,
                           context: context,
                         ),
                         _StatBar(
-                          label: 'Velocidad',
+                          label: context.l10n.speed,
                           value: pokemon.speed,
                           context: context,
                         ),

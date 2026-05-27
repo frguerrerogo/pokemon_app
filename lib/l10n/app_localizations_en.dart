@@ -163,4 +163,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeErrorTitle => 'An error has occurred';
+
+  @override
+  String get height => 'Height';
+
+  @override
+  String get weight => 'Weight';
+
+  @override
+  String get stats => 'Stats';
+
+  @override
+  String get hp => 'HP';
+
+  @override
+  String get attack => 'Attack';
+
+  @override
+  String get defense => 'Defense';
+
+  @override
+  String get special_attack => 'Special Attack';
+
+  @override
+  String get special_defense => 'Special Defense';
+
+  @override
+  String get speed => 'Speed';
 }

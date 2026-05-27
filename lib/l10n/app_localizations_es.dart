@@ -163,4 +163,31 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get homeErrorTitle => 'Ha ocurrido un error';
+
+  @override
+  String get height => 'Altura';
+
+  @override
+  String get weight => 'Peso';
+
+  @override
+  String get stats => 'Estadísticas';
+
+  @override
+  String get hp => 'HP';
+
+  @override
+  String get attack => 'Ataque';
+
+  @override
+  String get defense => 'Defensa';
+
+  @override
+  String get special_attack => 'Ataque Especial';
+
+  @override
+  String get special_defense => 'Defensa Especial';
+
+  @override
+  String get speed => 'Velocidad';
 }

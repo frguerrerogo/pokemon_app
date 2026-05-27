@@ -406,6 +406,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'An error has occurred'**
   String get homeErrorTitle;
+
+  /// No description provided for @height.
+  ///
+  /// In en, this message translates to:
+  /// **'Height'**
+  String get height;
+
+  /// No description provided for @weight.
+  ///
+  /// In en, this message translates to:
+  /// **'Weight'**
+  String get weight;
+
+  /// No description provided for @stats.
+  ///
+  /// In en, this message translates to:
+  /// **'Stats'**
+  String get stats;
+
+  /// No description provided for @hp.
+  ///
+  /// In en, this message translates to:
+  /// **'HP'**
+  String get hp;
+
+  /// No description provided for @attack.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack'**
+  String get attack;
+
+  /// No description provided for @defense.
+  ///
+  /// In en, this message translates to:
+  /// **'Defense'**
+  String get defense;
+
+  /// No description provided for @special_attack.
+  ///
+  /// In en, this message translates to:
+  /// **'Special Attack'**
+  String get special_attack;
+
+  /// No description provided for @special_defense.
+  ///
+  /// In en, this message translates to:
+  /// **'Special Defense'**
+  String get special_defense;
+
+  /// No description provided for @speed.
+  ///
+  /// In en, this message translates to:
+  /// **'Speed'**
+  String get speed;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
