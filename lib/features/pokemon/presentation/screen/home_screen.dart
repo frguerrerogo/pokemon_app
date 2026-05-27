@@ -1,18 +1,17 @@
 // features/pokemon/presentation/screens/home_screen.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pokemon_app/app/app.dart' show AppRoutes;
 import 'package:pokemon_app/core/core.dart';
 import 'package:pokemon_app/features/pokemon/presentation/controllers/home_controller.dart';
 import 'package:pokemon_app/features/pokemon/presentation/presentation.dart'
     show HomeStatus, PokemonCard, PokemonListSkeleton;
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends GetView<HomeController> {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<HomeController>();
-
     return Scaffold(
       backgroundColor: context.colorScheme.onPrimary,
       body: SafeArea(
@@ -126,9 +125,10 @@ class _LogoutButton extends StatelessWidget {
             ),
           ),
           ElevatedButton(
-            onPressed: () {
+            onPressed: () async {
               Get.back<void>();
               controller.logout();
+              await Get.offAllNamed<void>(AppRoutes.login);
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: context.colors.error,
@@ -148,13 +148,11 @@ class _LogoutButton extends StatelessWidget {
   }
 }
 
-class _OfflineBanner extends StatelessWidget {
+class _OfflineBanner extends GetView<HomeController> {
   const _OfflineBanner();
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<HomeController>();
-
     return Obx(() {
       if (!controller.state.value.isOffline) return const SizedBox.shrink();
 

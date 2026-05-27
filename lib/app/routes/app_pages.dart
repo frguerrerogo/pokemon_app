@@ -1,7 +1,7 @@
 // app/routes/app_pages.dart
 import 'package:get/get.dart';
 import 'package:pokemon_app/app/app.dart'
-    show AppRoutes, DetailBinding, HomeBinding, LoginBinding, PokemonBinding, RegisterBinding;
+    show AppRoutes, DetailBinding, HomeBinding, LoginBinding, RegisterBinding;
 import 'package:pokemon_app/features/auth/presentation/presentation.dart'
     show LoginScreen, RegisterScreen;
 import 'package:pokemon_app/features/pokemon/presentation/presentation.dart'
@@ -24,12 +24,12 @@ class AppPages {
     GetPage(
       name: AppRoutes.home,
       page: () => const HomeScreen(),
-      bindings: [PokemonBinding(), HomeBinding()],
+      binding: HomeBinding(),
     ),
     GetPage(
       name: AppRoutes.detail,
       page: () => const DetailScreen(),
-      bindings: [PokemonBinding(), DetailBinding()],
+      binding: DetailBinding(),
     ),
   ];
 }

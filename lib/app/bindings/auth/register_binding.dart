@@ -6,9 +6,7 @@ class RegisterBinding extends Bindings {
   @override
   void dependencies() {
     Get
-      ..lazyPut(
-        () => RegisterUseCase(authRepository: Get.find<AuthRepository>()),
-      )
+      ..lazyPut(() => RegisterUseCase(authRepository: Get.find<AuthRepository>()))
       ..lazyPut(
         () => RegisterController(
           registerUseCase: Get.find(),

@@ -5,13 +5,11 @@ import 'package:pokemon_app/core/core.dart';
 import 'package:pokemon_app/features/pokemon/presentation/controllers/detail_controller.dart';
 import 'package:pokemon_app/features/pokemon/presentation/presentation.dart' show DetailStatus;
 
-class DetailScreen extends StatelessWidget {
+class DetailScreen extends GetView<DetailController> {
   const DetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<DetailController>();
-
     return Scaffold(
       backgroundColor: context.colorScheme.onPrimary,
       appBar: AppBar(

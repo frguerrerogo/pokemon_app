@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
-import 'package:pokemon_app/app/app.dart' show AppPages, AppRoutes, FirebaseConfig;
+import 'package:pokemon_app/app/app.dart' show AppPages, AppRoutes, FirebaseConfig, InitialBinding;
 import 'package:pokemon_app/core/core.dart' show AppTheme, HiveService;
 import 'package:pokemon_app/l10n/app_localizations.dart';
 
@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
         Locale('en'),
       ],
       locale: const Locale('es'),
+      initialBinding: InitialBinding(),
     );
   }
 }
