@@ -282,15 +282,43 @@ class _ErrorState extends StatelessWidget {
   }
 }
 
-class _SuccessState extends StatelessWidget {
+class _SuccessState extends StatefulWidget {
   const _SuccessState({required this.controller});
 
   final HomeController controller;
 
   @override
+  State<_SuccessState> createState() => _SuccessStateState();
+}
+
+class _SuccessStateState extends State<_SuccessState> {
+  late ScrollController _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+    _scrollController.addListener(_onScroll);
+  }
+
+  @override
+  void dispose() {
+    _scrollController
+      ..removeListener(_onScroll)
+      ..dispose();
+    super.dispose();
+  }
+
+  Future<void> _onScroll() async {
+    if (_scrollController.position.pixels >= _scrollController.position.maxScrollExtent - 500) {
+      await widget.controller.loadMorePokemons();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      onRefresh: controller.refresh,
+      onRefresh: widget.controller.refresh,
       color: context.colorScheme.primary,
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -298,15 +326,29 @@ class _SuccessState extends StatelessWidget {
         ),
         child: Obx(
           () => ListView.separated(
+            controller: _scrollController,
             physics: const AlwaysScrollableScrollPhysics(),
             padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
-            itemCount: controller.state.value.pokemons.length,
+            itemCount: widget.controller.state.value.pokemons.length +
+                (widget.controller.state.value.isLoadingMore ? 1 : 0),
             separatorBuilder: (_, __) => const SizedBox(height: AppSpacing.sm),
             itemBuilder: (_, index) {
-              final pokemon = controller.state.value.pokemons[index];
+              // Loading indicator at the end
+              if (index == widget.controller.state.value.pokemons.length) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
+                  child: Center(
+                    child: CircularProgressIndicator(
+                      color: context.colorScheme.primary,
+                    ),
+                  ),
+                );
+              }
+
+              final pokemon = widget.controller.state.value.pokemons[index];
               return PokemonCard(
                 pokemon: pokemon,
-                onTap: () => controller.goToDetail(pokemon),
+                onTap: () => widget.controller.goToDetail(pokemon),
               );
             },
           ),

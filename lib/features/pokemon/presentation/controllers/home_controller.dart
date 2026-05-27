@@ -29,25 +29,65 @@ class HomeController extends GetxController {
     state.value = state.value.copyWith(
       status: HomeStatus.loading,
       errorMessage: '',
+      offset: 0,
+      pokemons: const [],
     );
 
     final online = await connectivityService.hasConnection;
 
     try {
       final result = await getPokemonsUseCase(
-        const GetPokemonsUseCaseParams(),
+        GetPokemonsUseCaseParams(
+          limit: state.value.limit,
+          offset: state.value.offset,
+        ),
       );
 
       state.value = state.value.copyWith(
         status: HomeStatus.success,
         pokemons: result,
         isOffline: !online,
+        offset: state.value.limit,
       );
     } on Exception catch (e) {
       state.value = state.value.copyWith(
         status: HomeStatus.error,
         errorMessage: e.toString().replaceFirst('Exception: ', ''),
         isOffline: !online,
+      );
+    }
+  }
+
+  Future<void> loadMorePokemons() async {
+    if (state.value.isLoadingMore || state.value.status != HomeStatus.success) {
+      return;
+    }
+
+    state.value = state.value.copyWith(isLoadingMore: true);
+
+    try {
+      final result = await getPokemonsUseCase(
+        GetPokemonsUseCaseParams(
+          limit: state.value.limit,
+          offset: state.value.offset,
+        ),
+      );
+
+      if (result.isEmpty) {
+        state.value = state.value.copyWith(isLoadingMore: false);
+        return;
+      }
+
+      final updatedPokemons = [...state.value.pokemons, ...result];
+      state.value = state.value.copyWith(
+        pokemons: updatedPokemons,
+        isLoadingMore: false,
+        offset: state.value.offset + state.value.limit,
+      );
+    } on Exception catch (e) {
+      state.value = state.value.copyWith(
+        isLoadingMore: false,
+        errorMessage: e.toString().replaceFirst('Exception: ', ''),
       );
     }
   }

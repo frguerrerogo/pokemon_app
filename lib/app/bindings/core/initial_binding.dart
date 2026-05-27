@@ -13,7 +13,13 @@ import 'package:pokemon_app/features/auth/data/data.dart'
 import 'package:pokemon_app/features/auth/domain/domain.dart'
     show AuthRepository, GetSessionUseCase;
 import 'package:pokemon_app/features/pokemon/data/data.dart'
-    show PokemonMapper, PokemonRemoteDatasource, PokemonRemoteDatasourceImpl, PokemonRepositoryImpl;
+    show
+        PokemonLocalDatasource,
+        PokemonLocalDatasourceImpl,
+        PokemonMapper,
+        PokemonRemoteDatasource,
+        PokemonRemoteDatasourceImpl,
+        PokemonRepositoryImpl;
 import 'package:pokemon_app/features/pokemon/domain/repositories/pokemon_repository.dart';
 
 class InitialBinding extends Bindings {
@@ -69,9 +75,14 @@ class InitialBinding extends Bindings {
         () => PokemonRemoteDatasourceImpl(Get.find()),
         fenix: true,
       )
+      ..lazyPut<PokemonLocalDatasource>(
+        PokemonLocalDatasourceImpl.new,
+        fenix: true,
+      )
       ..lazyPut<PokemonRepository>(
         () => PokemonRepositoryImpl(
           pokemonRemoteDataSource: Get.find(),
+          pokemonLocalDataSource: Get.find(),
           pokemonMapper: Get.find(),
         ),
         fenix: true,
