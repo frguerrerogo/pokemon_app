@@ -18,7 +18,7 @@ class _PokemonListSkeletonState extends State<PokemonListSkeleton>
   late final Animation<double> _animation;
 
   @override
-  Future<void> initState() async {
+  void initState() {
     super.initState();
     _controller = AnimationController(
       vsync: this,

@@ -21,29 +21,46 @@ class PokemonRemoteDatasourceImpl implements PokemonRemoteDatasource {
 
       final results = response.data!['results'] as List<dynamic>;
 
-      final pokemons = <PokemonModel>[];
+      return results.map((pokemon) {
+        final url = pokemon['url'] as String;
 
-      const batchSize = 10;
+        // https://pokeapi.co/api/v2/pokemon/1/
+        final id = int.parse(url.split('/')[6]);
 
-      for (var i = 0; i < results.length; i += batchSize) {
-        final batch = results.skip(i).take(batchSize);
-
-        final futures = batch.map((pokemon) async {
-          final url = pokemon['url'] as String;
-
-          final detailResponse = await _dioClient.dio.get<Map<String, dynamic>>(url);
-
-          return PokemonModel.fromJson(detailResponse.data!);
-        });
-
-        pokemons.addAll(await Future.wait(futures));
-      }
-
-      return pokemons;
+        return PokemonModel(
+          id: id,
+          name: pokemon['name'] as String,
+          imageUrl:
+              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png',
+          height: 0,
+          weight: 0,
+          hp: 0,
+          attack: 0,
+          defense: 0,
+          specialAttack: 0,
+          specialDefense: 0,
+          speed: 0,
+        );
+      }).toList();
     } on DioException catch (e) {
       throw Exception('Failed to fetch Pokémon list: ${e.message}');
     } catch (e) {
       throw Exception('Unexpected error while fetching Pokémon list: $e');
+    }
+  }
+
+  @override
+  Future<PokemonModel> getPokemonDetail(int id) async {
+    try {
+      final response = await _dioClient.dio.get<Map<String, dynamic>>(
+        '$_endpoint$id',
+      );
+
+      return PokemonModel.fromJson(response.data!);
+    } on DioException catch (e) {
+      throw Exception('Failed to fetch Pokémon detail: ${e.message}');
+    } catch (e) {
+      throw Exception('Unexpected error while fetching Pokémon detail: $e');
     }
   }
 }

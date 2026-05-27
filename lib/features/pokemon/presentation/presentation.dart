@@ -1,6 +1,8 @@
 /// Presentation exports for the pokemon feature.
 library;
 
+export 'controllers/detail_controller.dart';
+export 'controllers/detail_state.dart';
 export 'controllers/home_controller.dart';
 export 'controllers/home_state.dart';
 export 'screen/detail_screen.dart';

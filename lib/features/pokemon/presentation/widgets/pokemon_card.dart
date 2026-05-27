@@ -49,7 +49,7 @@ class _PokemonImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 120,
+      width: 110,
       height: double.infinity,
       decoration: BoxDecoration(
         color: context.colorScheme.primary.withAlpha(15),

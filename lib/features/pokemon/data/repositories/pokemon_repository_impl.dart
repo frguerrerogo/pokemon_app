@@ -23,4 +23,10 @@ class PokemonRepositoryImpl implements PokemonRepository {
     );
     return _pokemonMapper.modelsToEntities(models);
   }
+
+  @override
+  Future<PokemonEntity> getPokemonDetail(int id) async {
+    final model = await _pokemonRemoteDataSource.getPokemonDetail(id);
+    return _pokemonMapper.modelToEntity(model);
+  }
 }
