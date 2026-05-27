@@ -19,9 +19,9 @@ class HomeController extends GetxController {
   final Rx<HomeState> state = const HomeState().obs;
 
   @override
-  void onInit() {
+  Future<void> onInit() async {
     super.onInit();
-    loadPokemons();
+    await loadPokemons();
     _listenConnectivity();
   }
 
@@ -43,7 +43,7 @@ class HomeController extends GetxController {
         pokemons: result,
         isOffline: !online,
       );
-    } catch (e) {
+    } on Exception catch (e) {
       state.value = state.value.copyWith(
         status: HomeStatus.error,
         errorMessage: e.toString().replaceFirst('Exception: ', ''),
@@ -57,8 +57,8 @@ class HomeController extends GetxController {
     await loadPokemons();
   }
 
-  void goToDetail(PokemonEntity pokemon) {
-    Get.toNamed<void>(AppRoutes.detail, arguments: pokemon);
+  Future<void> goToDetail(PokemonEntity pokemon) async {
+    await Get.toNamed<void>(AppRoutes.detail, arguments: pokemon);
   }
 
   void logout() {
@@ -66,13 +66,13 @@ class HomeController extends GetxController {
   }
 
   void _listenConnectivity() {
-    connectivityService.onConnectivityChanged.listen((online) {
+    connectivityService.onConnectivityChanged.listen((online) async {
       state.value = state.value.copyWith(
         isOffline: !online,
       );
 
       if (online && state.value.hasData) {
-        loadPokemons();
+        await loadPokemons();
       }
     });
   }

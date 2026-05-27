@@ -98,8 +98,8 @@ class _LogoutButton extends StatelessWidget {
     );
   }
 
-  void _confirmLogout(BuildContext context, HomeController controller) {
-    showDialog<void>(
+  Future<void> _confirmLogout(BuildContext context, HomeController controller) async {
+    await showDialog<void>(
       context: context,
       builder: (_) => AlertDialog(
         backgroundColor: context.colorScheme.surface,

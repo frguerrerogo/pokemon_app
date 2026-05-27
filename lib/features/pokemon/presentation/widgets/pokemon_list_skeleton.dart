@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:pokemon_app/core/core.dart';
 
@@ -16,13 +18,13 @@ class _PokemonListSkeletonState extends State<PokemonListSkeleton>
   late final Animation<double> _animation;
 
   @override
-  void initState() {
+  Future<void> initState() async {
     super.initState();
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1200),
-    )..repeat(reverse: true);
-
+    );
+    unawaited(_controller.repeat(reverse: true));
     _animation = Tween<double>(begin: 0.4, end: 1).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
     );
