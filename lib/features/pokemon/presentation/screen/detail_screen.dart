@@ -38,7 +38,9 @@ class DetailScreen extends GetView<DetailController> {
           case DetailStatus.initial:
           case DetailStatus.loading:
             return const Center(
-              child: CircularProgressIndicator(),
+              child: PokeballLoading(
+                size: 150,
+              ),
             );
 
           case DetailStatus.error:
@@ -107,10 +109,8 @@ class DetailScreen extends GetView<DetailController> {
                     child: CachedNetworkImage(
                       imageUrl: pokemon.imageUrl,
                       fit: BoxFit.contain,
-                      placeholder: (_, __) => Center(
-                        child: CircularProgressIndicator(
-                          color: context.colorScheme.primary,
-                        ),
+                      placeholder: (_, __) => const Center(
+                        child: PokeballLoading(),
                       ),
                       errorWidget: (_, __, ___) => Icon(
                         Icons.catching_pokemon_rounded,

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 abstract class AppPalette {
   //* SEED COLOR FOR MATERIAL 3
   /// Seed color for generating Material 3 color schemes (#074F3B)
-  static const seedColor = Color.fromARGB(255, 7, 80, 59);
+  static const seedColor = Color.fromARGB(255, 255, 0, 0);
 
   /// Neutral color token 0 (pure white).
   static const neutral0 = Color(0xFFFFFFFF);

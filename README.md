@@ -6,6 +6,12 @@ La aplicación está diseñada para proporcionar una experiencia visual atractiv
 
 La aplicación utiliza la **PokéAPI** pública para obtener información actualizada sobre Pokémon, con almacenamiento en caché mediante Hive para acceso offline y gestión de estado reactiva con GetX.
 
+## 🎥 Demo en video
+
+Puedes ver una demostración completa de la aplicación haciendo clic en el siguiente enlace:
+
+👉 [Ver demo de PokeApp](https://drive.google.com/file/d/192v7XYo9j0ZXEbAE2mBSjUdqqAW4RFno/view?usp=sharing)
+
 ---
 
 ## 🚀 Características Principales

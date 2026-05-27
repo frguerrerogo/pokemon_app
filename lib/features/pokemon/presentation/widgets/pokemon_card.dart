@@ -61,11 +61,8 @@ class _PokemonImage extends StatelessWidget {
       child: CachedNetworkImage(
         imageUrl: imageUrl,
         fit: BoxFit.contain,
-        placeholder: (_, __) => Center(
-          child: CircularProgressIndicator(
-            strokeWidth: 2,
-            color: context.colorScheme.primary,
-          ),
+        placeholder: (_, __) => const Center(
+          child: PokeballLoading(),
         ),
         errorWidget: (_, __, ___) => Icon(
           Icons.catching_pokemon_rounded,

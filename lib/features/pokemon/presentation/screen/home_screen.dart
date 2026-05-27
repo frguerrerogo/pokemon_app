@@ -335,11 +335,11 @@ class _SuccessStateState extends State<_SuccessState> {
             itemBuilder: (_, index) {
               // Loading indicator at the end
               if (index == widget.controller.state.value.pokemons.length) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
+                return const Padding(
+                  padding: EdgeInsets.symmetric(vertical: AppSpacing.md),
                   child: Center(
-                    child: CircularProgressIndicator(
-                      color: context.colorScheme.primary,
+                    child: PokeballLoading(
+                      size: 80,
                     ),
                   ),
                 );
