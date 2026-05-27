@@ -376,6 +376,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Logout'**
   String get logout;
+
+  /// No description provided for @homeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pokédex'**
+  String get homeTitle;
+
+  /// No description provided for @homeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore and discover Pokémon'**
+  String get homeSubtitle;
+
+  /// No description provided for @homeLogoutMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to log out?'**
+  String get homeLogoutMessage;
+
+  /// No description provided for @homeOfflineMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'No internet connection'**
+  String get homeOfflineMessage;
+
+  /// No description provided for @homeErrorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'An error has occurred'**
+  String get homeErrorTitle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

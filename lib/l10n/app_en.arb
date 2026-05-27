@@ -52,5 +52,11 @@
   "next": "Next",
   "yes": "Yes",
   "no": "No",
-  "logout": "Logout"
+  "logout": "Logout",
+
+  "homeTitle": "Pokédex",
+  "homeSubtitle": "Explore and discover Pokémon",
+  "homeLogoutMessage": "Are you sure you want to log out?",
+  "homeOfflineMessage": "No internet connection",
+  "homeErrorTitle": "An error has occurred"
 }

@@ -148,4 +148,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get logout => 'Logout';
+
+  @override
+  String get homeTitle => 'Pokédex';
+
+  @override
+  String get homeSubtitle => 'Explore and discover Pokémon';
+
+  @override
+  String get homeLogoutMessage => 'Are you sure you want to log out?';
+
+  @override
+  String get homeOfflineMessage => 'No internet connection';
+
+  @override
+  String get homeErrorTitle => 'An error has occurred';
 }

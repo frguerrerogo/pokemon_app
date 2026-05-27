@@ -5,7 +5,6 @@ class PokemonModel {
     required this.height,
     required this.weight,
     required this.imageUrl,
-    required this.genderRate,
     required this.hp,
     required this.attack,
     required this.defense,
@@ -28,8 +27,7 @@ class PokemonModel {
       name: json['name'] as String,
       height: (json['height'] as num).toDouble(),
       weight: (json['weight'] as num).toDouble(),
-      imageUrl: json['imageUrl'] as String,
-      genderRate: (json['gender_rate'] as num).toDouble(),
+      imageUrl: json['sprites']['front_default'] as String,
       hp: getStat('hp'),
       attack: getStat('attack'),
       defense: getStat('defense'),
@@ -44,8 +42,6 @@ class PokemonModel {
   final double height;
   final double weight;
   final String imageUrl;
-  final double genderRate;
-
   final int hp;
   final int attack;
   final int defense;
@@ -60,7 +56,6 @@ class PokemonModel {
       'height': height,
       'weight': weight,
       'imageUrl': imageUrl,
-      'gender_rate': genderRate,
       'hp': hp,
       'attack': attack,
       'defense': defense,

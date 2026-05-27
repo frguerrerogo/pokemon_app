@@ -7,4 +7,4 @@ export 'controllers/register_controller.dart';
 export 'controllers/register_state.dart';
 export 'screen/login_screen.dart';
 export 'screen/register_screen.dart';
-export 'widgets/auth_text_field.dart';
+export 'widgets/widgets.dart';

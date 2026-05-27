@@ -1,4 +1,3 @@
-// features/pokemon/domain/usecases/get_pokemons_usecase.dart
 import 'package:pokemon_app/core/core.dart';
 import 'package:pokemon_app/features/pokemon/domain/domain.dart'
     show PokemonEntity, PokemonRepository;

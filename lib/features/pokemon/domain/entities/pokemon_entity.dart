@@ -7,7 +7,6 @@ class PokemonEntity extends Equatable {
     required this.height,
     required this.weight,
     required this.imageUrl,
-    required this.genderRate,
     required this.hp,
     required this.attack,
     required this.defense,
@@ -20,7 +19,6 @@ class PokemonEntity extends Equatable {
   final double height;
   final double weight;
   final String imageUrl;
-  final double genderRate;
   final int hp;
   final int attack;
   final int defense;
@@ -35,7 +33,6 @@ class PokemonEntity extends Equatable {
         height,
         weight,
         imageUrl,
-        genderRate,
         hp,
         attack,
         defense,
@@ -43,4 +40,9 @@ class PokemonEntity extends Equatable {
         specialDefense,
         speed,
       ];
+
+  String capitalize(String text) {
+    if (text.isEmpty) return text;
+    return text[0].toUpperCase() + text.substring(1);
+  }
 }

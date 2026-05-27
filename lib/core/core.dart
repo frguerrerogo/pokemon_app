@@ -6,6 +6,7 @@ export 'errors/auth_exception_mapper.dart';
 export 'errors/failures.dart';
 export 'extensions/extensions.dart';
 export 'network/dio_client.dart';
+export 'services/connectivity_service.dart';
 export 'services/hive_service.dart';
 export 'shared/mapper.dart';
 export 'shared/usecase.dart';

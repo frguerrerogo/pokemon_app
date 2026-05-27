@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pokemon_app/core/core.dart';
-import 'package:pokemon_app/features/auth/presentation/controllers/register_controller.dart';
-import 'package:pokemon_app/features/auth/presentation/widgets/widgets.dart';
+import 'package:pokemon_app/features/auth/presentation/presentation.dart'
+    show EmailFieldWidget, PasswordFieldWidget, RegisterController;
 
 class RegisterScreen extends GetView<RegisterController> {
   const RegisterScreen({super.key});

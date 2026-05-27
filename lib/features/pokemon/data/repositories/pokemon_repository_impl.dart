@@ -1,15 +1,15 @@
 import 'package:pokemon_app/features/pokemon/data/data.dart'
-    show PokemonMapper, PokemonRemoteDataSource;
+    show PokemonMapper, PokemonRemoteDatasource;
 import 'package:pokemon_app/features/pokemon/domain/domain.dart'
     show PokemonEntity, PokemonRepository;
 
 class PokemonRepositoryImpl implements PokemonRepository {
   PokemonRepositoryImpl({
-    required PokemonRemoteDataSource pokemonRemoteDataSource,
+    required PokemonRemoteDatasource pokemonRemoteDataSource,
     required PokemonMapper pokemonMapper,
   })  : _pokemonRemoteDataSource = pokemonRemoteDataSource,
         _pokemonMapper = pokemonMapper;
-  final PokemonRemoteDataSource _pokemonRemoteDataSource;
+  final PokemonRemoteDatasource _pokemonRemoteDataSource;
   final PokemonMapper _pokemonMapper;
 
   @override

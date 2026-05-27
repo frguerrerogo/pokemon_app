@@ -1,9 +1,11 @@
 // app/routes/app_pages.dart
 import 'package:get/get.dart';
-import 'package:pokemon_app/app/app.dart' show AppRoutes, LoginBinding, RegisterBinding;
+import 'package:pokemon_app/app/app.dart'
+    show AppRoutes, HomeBinding, LoginBinding, RegisterBinding;
 import 'package:pokemon_app/features/auth/presentation/presentation.dart'
     show LoginScreen, RegisterScreen;
-import 'package:pokemon_app/features/pokemon/presentation/presentation.dart' show HomeScreen;
+import 'package:pokemon_app/features/pokemon/presentation/presentation.dart'
+    show DetailScreen, HomeScreen;
 
 class AppPages {
   static const String initial = AppRoutes.login;
@@ -22,11 +24,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.home,
       page: () => const HomeScreen(),
-      //binding: HomeBinding(),
+      binding: HomeBinding(),
     ),
-    // GetPage(
-    //   name: AppRoutes.detail,
-    //   page: () => const DetailScreen(),
-    // ),
+    GetPage(
+      name: AppRoutes.detail,
+      page: () => const DetailScreen(),
+    ),
   ];
 }

@@ -52,5 +52,11 @@
   "next": "Siguiente",
   "yes": "Sí",
   "no": "No",
-  "logout": "Cerrar sesión"
+  "logout": "Cerrar sesión",
+
+  "homeTitle": "Pokédex",
+  "homeSubtitle": "Explora y descubre Pokémon",
+  "homeLogoutMessage": "¿Estás seguro de que deseas cerrar sesión?",
+  "homeOfflineMessage": "Sin conexión a internet",
+  "homeErrorTitle": "Ha ocurrido un error"
 }
