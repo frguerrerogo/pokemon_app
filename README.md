@@ -29,8 +29,8 @@ Puedes ver una demostración completa de la aplicación haciendo clic en el sigu
 
 ## 🛠️ Requisitos Previos
 
-- **Flutter**  3.38.7+ ([Instalar](https://flutter.dev/docs/get-started/install))
-- **Dart** 3.10.7+
+- **Flutter**  3.44.0+ ([Instalar](https://flutter.dev/docs/get-started/install))
+- **Dart** 3.12.0+
 - **Git**
 - **Android Studio/SDK** (API 24+) o **Xcode 14.3+** (según plataforma)
 - **Configuración de Firebase** (credenciales en `google-services.json` y `GoogleService-Info.plist`)
@@ -70,8 +70,8 @@ flutter run -d <device-id>
 
 | Tecnología | Propósito |
 |-----------|----------|
-| **Flutter 3.38.7+** | Framework principal |
-| **Dart 3.10.7+** | Lenguaje de programación |
+| **Flutter 3.44.0+** | Framework principal |
+| **Dart 3.12.0+** | Lenguaje de programación |
 | **GetX** | Gestión de estado y routing |
 | **Firebase Core** | Infraestructura Firebase |
 | **Firebase Auth** | Autenticación de usuarios |
