@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:pokemon_app/features/auth/domain/domain.dart' show UserEntity;
 
 part 'user_hive_model.g.dart';

@@ -8,7 +8,7 @@ part of 'pokemon_hive_model.dart';
 
 class PokemonHiveModelAdapter extends TypeAdapter<PokemonHiveModel> {
   @override
-  final int typeId = 1;
+  final typeId = 1;
 
   @override
   PokemonHiveModel read(BinaryReader reader) {
@@ -17,17 +17,17 @@ class PokemonHiveModelAdapter extends TypeAdapter<PokemonHiveModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return PokemonHiveModel(
-      id: fields[0] as int,
+      id: (fields[0] as num).toInt(),
       name: fields[1] as String,
-      height: fields[2] as double,
-      weight: fields[3] as double,
+      height: (fields[2] as num).toDouble(),
+      weight: (fields[3] as num).toDouble(),
       imageUrl: fields[4] as String,
-      hp: fields[5] as int,
-      attack: fields[6] as int,
-      defense: fields[7] as int,
-      specialAttack: fields[8] as int,
-      specialDefense: fields[9] as int,
-      speed: fields[10] as int,
+      hp: (fields[5] as num).toInt(),
+      attack: (fields[6] as num).toInt(),
+      defense: (fields[7] as num).toInt(),
+      specialAttack: (fields[8] as num).toInt(),
+      specialDefense: (fields[9] as num).toInt(),
+      speed: (fields[10] as num).toInt(),
     );
   }
 

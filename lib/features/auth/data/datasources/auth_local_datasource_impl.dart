@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:pokemon_app/features/auth/data/data.dart' show AuthLocalDatasource, UserHiveModel;
 
 class AuthLocalDatasourceImpl implements AuthLocalDatasource {
