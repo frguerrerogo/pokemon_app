@@ -31,7 +31,7 @@ class PasswordRecoveryController extends GetxController {
         ForgotPasswordParams(email: emailController.text.trim()),
       );
       status.value = PasswordRecoveryStatus.success;
-    } catch (e) {
+    } on Exception catch (e) {
       errorMessage.value = e.toString().replaceFirst('Exception: ', '');
       status.value = PasswordRecoveryStatus.error;
     }
