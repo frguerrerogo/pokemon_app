@@ -67,5 +67,16 @@
   "defense": "Defense",
   "special_attack": "Special Attack",
   "special_defense": "Special Defense",
-  "speed": "Speed"
+  "speed": "Speed",
+
+  "forgotPasswordTitle": "Forgot Password?",
+"forgotPasswordSubtitle": "Enter your email and we'll send you a link to reset your password.",
+"forgotPasswordButton": "Send Reset Link",
+"forgotPasswordRemember": "Remember your password?",
+"forgotPasswordLogin": "Sign in",
+"forgotPasswordSuccessTitle": "Email Sent!",
+"forgotPasswordSuccessMessage": "We sent the recovery link to",
+"forgotPasswordSuccessHint": "Check your spam folder if you don't see it.",
+"forgotPasswordBackToLogin": "Back to Sign In",
+"forgotPasswordResend": "Resend Email"
 }

@@ -23,8 +23,6 @@ class RegisterScreen extends GetView<RegisterController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: AppSpacing.xl),
-
-                //* ─── Header ───
                 Text(
                   context.l10n.signupTitle,
                   style: context.typography.displayMedium?.copyWith(
@@ -40,8 +38,6 @@ class RegisterScreen extends GetView<RegisterController> {
                   ),
                 ),
                 const SizedBox(height: AppSpacing.xl2),
-
-                //* ─── Email ───
                 EmailFieldWidget(
                   controller: controller.emailController,
                   validator: controller.validateEmail,
@@ -49,8 +45,6 @@ class RegisterScreen extends GetView<RegisterController> {
                   hint: context.l10n.loginEmailHint,
                 ),
                 const SizedBox(height: AppSpacing.sectionGap),
-
-                //* ─── Password ───
                 Obx(
                   () => PasswordFieldWidget(
                     controller: controller.passwordController,
@@ -62,8 +56,6 @@ class RegisterScreen extends GetView<RegisterController> {
                   ),
                 ),
                 const SizedBox(height: AppSpacing.sectionGap),
-
-                //* ─── Confirm Password ───
                 Obx(
                   () => PasswordFieldWidget(
                     controller: controller.confirmPasswordController,
@@ -77,8 +69,6 @@ class RegisterScreen extends GetView<RegisterController> {
                   ),
                 ),
                 const SizedBox(height: AppSpacing.xl2),
-
-                //* ─── Error global ───
                 Obx(
                   () => controller.state.value.errorMessage.isNotEmpty
                       ? Container(
@@ -99,8 +89,6 @@ class RegisterScreen extends GetView<RegisterController> {
                         )
                       : const SizedBox.shrink(),
                 ),
-
-                //* ─── Botón registro ───
                 Obx(
                   () => SizedBox(
                     width: double.infinity,
@@ -137,8 +125,6 @@ class RegisterScreen extends GetView<RegisterController> {
                   ),
                 ),
                 const SizedBox(height: AppSpacing.sectionGap),
-
-                //* ─── Ir a login ───
                 Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

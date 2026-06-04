@@ -190,4 +190,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get speed => 'Speed';
+
+  @override
+  String get forgotPasswordTitle => 'Forgot Password?';
+
+  @override
+  String get forgotPasswordSubtitle => 'Enter your email and we\'ll send you a link to reset your password.';
+
+  @override
+  String get forgotPasswordButton => 'Send Reset Link';
+
+  @override
+  String get forgotPasswordRemember => 'Remember your password?';
+
+  @override
+  String get forgotPasswordLogin => 'Sign in';
+
+  @override
+  String get forgotPasswordSuccessTitle => 'Email Sent!';
+
+  @override
+  String get forgotPasswordSuccessMessage => 'We sent the recovery link to';
+
+  @override
+  String get forgotPasswordSuccessHint => 'Check your spam folder if you don\'t see it.';
+
+  @override
+  String get forgotPasswordBackToLogin => 'Back to Sign In';
+
+  @override
+  String get forgotPasswordResend => 'Resend Email';
 }

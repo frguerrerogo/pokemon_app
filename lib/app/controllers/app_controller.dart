@@ -11,10 +11,7 @@ class AppController extends GetxController {
 
   final GetSessionUseCase getSessionUseCase;
 
-  // ── STATE ─────────────────────────────────────────────
   final Rx<AppState> state = const AppState().obs;
-
-  // ── LIFECYCLE ─────────────────────────────────────────
 
   @override
   Future<void> onReady() async {
@@ -22,13 +19,9 @@ class AppController extends GetxController {
     await _checkSession();
   }
 
-  // ── GETTERS ───────────────────────────────────────────
-
   UserEntity? get currentUser => state.value.currentUser;
 
   bool get isAuthenticated => currentUser != null;
-
-  // ── ACTIONS ───────────────────────────────────────────
 
   void setUser(UserEntity user) {
     state.value = state.value.copyWith(
@@ -39,8 +32,6 @@ class AppController extends GetxController {
   void clearUser() {
     state.value = state.value.copyWith();
   }
-
-  // ── PRIVATE ───────────────────────────────────────────
 
   Future<void> _checkSession() async {
     _setCheckingSession(true);

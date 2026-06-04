@@ -39,8 +39,6 @@ class PokemonCard extends StatelessWidget {
   }
 }
 
-// ── Imagen ────────────────────────────────────────────────────────────────────
-
 class _PokemonImage extends StatelessWidget {
   const _PokemonImage({required this.imageUrl});
 
@@ -74,8 +72,6 @@ class _PokemonImage extends StatelessWidget {
   }
 }
 
-// ── Info ──────────────────────────────────────────────────────────────────────
-
 class _PokemonInfo extends StatelessWidget {
   const _PokemonInfo({required this.pokemon});
 
@@ -104,8 +100,6 @@ class _PokemonInfo extends StatelessWidget {
     );
   }
 }
-
-// ── ID ────────────────────────────────────────────────────────────────────────
 
 class _PokemonId extends StatelessWidget {
   const _PokemonId({required this.id});

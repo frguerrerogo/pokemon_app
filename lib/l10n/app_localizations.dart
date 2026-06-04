@@ -460,6 +460,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Speed'**
   String get speed;
+
+  /// No description provided for @forgotPasswordTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password?'**
+  String get forgotPasswordTitle;
+
+  /// No description provided for @forgotPasswordSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email and we\'ll send you a link to reset your password.'**
+  String get forgotPasswordSubtitle;
+
+  /// No description provided for @forgotPasswordButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Reset Link'**
+  String get forgotPasswordButton;
+
+  /// No description provided for @forgotPasswordRemember.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember your password?'**
+  String get forgotPasswordRemember;
+
+  /// No description provided for @forgotPasswordLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get forgotPasswordLogin;
+
+  /// No description provided for @forgotPasswordSuccessTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Email Sent!'**
+  String get forgotPasswordSuccessTitle;
+
+  /// No description provided for @forgotPasswordSuccessMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'We sent the recovery link to'**
+  String get forgotPasswordSuccessMessage;
+
+  /// No description provided for @forgotPasswordSuccessHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your spam folder if you don\'t see it.'**
+  String get forgotPasswordSuccessHint;
+
+  /// No description provided for @forgotPasswordBackToLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Sign In'**
+  String get forgotPasswordBackToLogin;
+
+  /// No description provided for @forgotPasswordResend.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend Email'**
+  String get forgotPasswordResend;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

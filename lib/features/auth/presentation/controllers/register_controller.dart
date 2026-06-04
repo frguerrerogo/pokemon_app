@@ -10,10 +10,8 @@ class RegisterController extends GetxController {
 
   final RegisterUseCase registerUseCase;
 
-  // ── STATE ─────────────────────────────────────────────
   final Rx<RegisterState> state = const RegisterState().obs;
 
-  // ── FORM ──────────────────────────────────────────────
   final formKey = GlobalKey<FormState>();
 
   final emailController = TextEditingController();
@@ -32,7 +30,6 @@ class RegisterController extends GetxController {
     );
   }
 
-  // ── LIFECYCLE ─────────────────────────────────────────
   @override
   void onClose() {
     emailController.dispose();
@@ -40,8 +37,6 @@ class RegisterController extends GetxController {
     confirmPasswordController.dispose();
     super.onClose();
   }
-
-  // ── ACTIONS ───────────────────────────────────────────
 
   Future<void> register() async {
     if (!_validateForm()) return;
@@ -84,8 +79,6 @@ class RegisterController extends GetxController {
     );
   }
 
-  // ── VALIDATORS ────────────────────────────────────────
-
   String? validateEmail(String? value) {
     if (value == null || value.trim().isEmpty) {
       return 'El correo es requerido.';
@@ -121,8 +114,6 @@ class RegisterController extends GetxController {
 
     return null;
   }
-
-  // ── PRIVATE ───────────────────────────────────────────
 
   bool _validateForm() {
     _clearError();

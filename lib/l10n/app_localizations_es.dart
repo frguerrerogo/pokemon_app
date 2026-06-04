@@ -190,4 +190,34 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get speed => 'Velocidad';
+
+  @override
+  String get forgotPasswordTitle => '¿Olvidaste tu contraseña?';
+
+  @override
+  String get forgotPasswordSubtitle => 'Ingresa tu correo y te enviaremos un enlace para restablecerla.';
+
+  @override
+  String get forgotPasswordButton => 'Enviar enlace';
+
+  @override
+  String get forgotPasswordRemember => '¿Recordaste tu contraseña?';
+
+  @override
+  String get forgotPasswordLogin => 'Iniciar sesión';
+
+  @override
+  String get forgotPasswordSuccessTitle => '¡Correo enviado!';
+
+  @override
+  String get forgotPasswordSuccessMessage => 'Enviamos el enlace de recuperación a';
+
+  @override
+  String get forgotPasswordSuccessHint => 'Revisa tu carpeta de spam si no lo encuentras.';
+
+  @override
+  String get forgotPasswordBackToLogin => 'Volver al inicio de sesión';
+
+  @override
+  String get forgotPasswordResend => 'Reenviar correo';
 }

@@ -3,8 +3,10 @@ library;
 
 export 'controllers/login_controller.dart';
 export 'controllers/login_state.dart';
+export 'controllers/password_recovery_controller.dart';
 export 'controllers/register_controller.dart';
 export 'controllers/register_state.dart';
 export 'screen/login_screen.dart';
+export 'screen/password_recovery.dart';
 export 'screen/register_screen.dart';
 export 'widgets/widgets.dart';

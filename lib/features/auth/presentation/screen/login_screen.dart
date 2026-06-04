@@ -23,8 +23,6 @@ class LoginScreen extends GetView<LoginController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: AppSpacing.xl3),
-
-                //* ─── Header ───
                 Text(
                   context.l10n.loginWelcome,
                   style: context.typography.displayMedium?.copyWith(
@@ -40,8 +38,6 @@ class LoginScreen extends GetView<LoginController> {
                   ),
                 ),
                 const SizedBox(height: AppSpacing.xl3),
-
-                //* ─── Email ───
                 EmailFieldWidget(
                   controller: controller.emailController,
                   validator: controller.validateEmail,
@@ -49,8 +45,6 @@ class LoginScreen extends GetView<LoginController> {
                   hint: context.l10n.loginEmailHint,
                 ),
                 const SizedBox(height: AppSpacing.sectionGap),
-
-                //* ─── Password ───
                 Obx(
                   () => PasswordFieldWidget(
                     controller: controller.passwordController,
@@ -64,26 +58,32 @@ class LoginScreen extends GetView<LoginController> {
                   ),
                 ),
                 const SizedBox(height: AppSpacing.md),
-
-                //* ─── Forgot password ───
                 Align(
                   alignment: Alignment.centerRight,
                   child: GestureDetector(
                     onTap: () {
                       // Forgot password — pendiente
                     },
-                    child: Text(
-                      context.l10n.loginForgotPassword,
-                      style: context.typography.bodySmall?.copyWith(
-                        color: context.colorScheme.primary,
-                        fontWeight: FontWeight.w600,
+                    child: InkWell(
+                      onTap: controller.goToPasswordRecovery,
+                      borderRadius: AppBorderRadius.brSm,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: AppSpacing.xs,
+                          vertical: AppSpacing.xs2,
+                        ),
+                        child: Text(
+                          context.l10n.loginForgotPassword,
+                          style: context.typography.bodySmall?.copyWith(
+                            color: context.colorScheme.primary,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ),
                 const SizedBox(height: AppSpacing.xl2),
-
-                //* ─── Error global ───
                 Obx(
                   () => controller.state.value.errorMessage.isNotEmpty
                       ? Container(
@@ -104,8 +104,6 @@ class LoginScreen extends GetView<LoginController> {
                         )
                       : const SizedBox.shrink(),
                 ),
-
-                //* ─── Botón login ───
                 Obx(
                   () => SizedBox(
                     width: double.infinity,
@@ -142,8 +140,6 @@ class LoginScreen extends GetView<LoginController> {
                   ),
                 ),
                 const SizedBox(height: AppSpacing.sectionGap),
-
-                //* ─── Ir a registro ───
                 Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

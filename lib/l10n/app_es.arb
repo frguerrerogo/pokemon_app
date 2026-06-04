@@ -67,5 +67,16 @@
   "defense": "Defensa",
   "special_attack": "Ataque Especial",
   "special_defense": "Defensa Especial",
-  "speed": "Velocidad"
+  "speed": "Velocidad",
+
+"forgotPasswordTitle": "¿Olvidaste tu contraseña?",
+"forgotPasswordSubtitle": "Ingresa tu correo y te enviaremos un enlace para restablecerla.",
+"forgotPasswordButton": "Enviar enlace",
+"forgotPasswordRemember": "¿Recordaste tu contraseña?",
+"forgotPasswordLogin": "Iniciar sesión",
+"forgotPasswordSuccessTitle": "¡Correo enviado!",
+"forgotPasswordSuccessMessage": "Enviamos el enlace de recuperación a",
+"forgotPasswordSuccessHint": "Revisa tu carpeta de spam si no lo encuentras.",
+"forgotPasswordBackToLogin": "Volver al inicio de sesión",
+"forgotPasswordResend": "Reenviar correo"
 }

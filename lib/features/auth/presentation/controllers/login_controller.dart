@@ -9,10 +9,8 @@ class LoginController extends GetxController {
 
   final LoginUseCase loginUseCase;
 
-  // ── STATE ─────────────────────────────────────────────
   final Rx<LoginState> state = const LoginState().obs;
 
-  // ── FORM ──────────────────────────────────────────────
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -23,15 +21,12 @@ class LoginController extends GetxController {
     );
   }
 
-  // ── LIFECYCLE ─────────────────────────────────────────
   @override
   void onClose() {
     emailController.dispose();
     passwordController.dispose();
     super.onClose();
   }
-
-  // ── ACTIONS ───────────────────────────────────────────
 
   Future<void> login() async {
     if (!_validateForm()) return;
@@ -61,6 +56,11 @@ class LoginController extends GetxController {
     await Get.toNamed<void>(AppRoutes.register);
   }
 
+  Future<void> goToPasswordRecovery() async {
+    _clearError();
+    await Get.toNamed<void>(AppRoutes.passwordRecovery);
+  }
+
   void togglePasswordVisibility() {
     state.update((val) {
       state.value = state.value.copyWith(
@@ -68,8 +68,6 @@ class LoginController extends GetxController {
       );
     });
   }
-
-  // ── VALIDATION ────────────────────────────────────────
 
   String? validateEmail(String? value) {
     if (value == null || value.trim().isEmpty) {
@@ -90,8 +88,6 @@ class LoginController extends GetxController {
     }
     return null;
   }
-
-  // ── PRIVATE HELPERS ───────────────────────────────────
 
   bool _validateForm() {
     _clearError();
