@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'pokemon_hive_model.dart';
+part of 'pokemon_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class PokemonHiveModelAdapter extends TypeAdapter<PokemonHiveModel> {
+class PokemonModelAdapter extends TypeAdapter<PokemonModel> {
   @override
   final typeId = 1;
 
   @override
-  PokemonHiveModel read(BinaryReader reader) {
+  PokemonModel read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return PokemonHiveModel(
+    return PokemonModel(
       id: (fields[0] as num).toInt(),
       name: fields[1] as String,
       height: (fields[2] as num).toDouble(),
@@ -32,7 +32,7 @@ class PokemonHiveModelAdapter extends TypeAdapter<PokemonHiveModel> {
   }
 
   @override
-  void write(BinaryWriter writer, PokemonHiveModel obj) {
+  void write(BinaryWriter writer, PokemonModel obj) {
     writer
       ..writeByte(11)
       ..writeByte(0)
@@ -65,7 +65,40 @@ class PokemonHiveModelAdapter extends TypeAdapter<PokemonHiveModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is PokemonHiveModelAdapter &&
+      other is PokemonModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+PokemonModel _$PokemonModelFromJson(Map<String, dynamic> json) => PokemonModel(
+      id: (json['id'] as num).toInt(),
+      name: json['name'] as String,
+      height: (json['height'] as num).toDouble(),
+      weight: (json['weight'] as num).toDouble(),
+      imageUrl: json['imageUrl'] as String,
+      hp: (json['hp'] as num).toInt(),
+      attack: (json['attack'] as num).toInt(),
+      defense: (json['defense'] as num).toInt(),
+      specialAttack: (json['specialAttack'] as num).toInt(),
+      specialDefense: (json['specialDefense'] as num).toInt(),
+      speed: (json['speed'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$PokemonModelToJson(PokemonModel instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'height': instance.height,
+      'weight': instance.weight,
+      'imageUrl': instance.imageUrl,
+      'hp': instance.hp,
+      'attack': instance.attack,
+      'defense': instance.defense,
+      'specialAttack': instance.specialAttack,
+      'specialDefense': instance.specialDefense,
+      'speed': instance.speed,
+    };

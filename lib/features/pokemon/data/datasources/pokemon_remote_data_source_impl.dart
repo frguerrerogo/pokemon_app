@@ -21,31 +21,9 @@ class PokemonRemoteDatasourceImpl implements PokemonRemoteDatasource {
 
       final results = response.data!['results'] as List<dynamic>;
 
-      return results.map((pokemon) {
-        final url = pokemon['url'] as String;
-
-        // https://pokeapi.co/api/v2/pokemon/1/
-        final id = int.parse(url.split('/')[6]);
-
-        return PokemonModel(
-          id: id,
-          name: pokemon['name'] as String,
-          imageUrl:
-              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png',
-          height: 0,
-          weight: 0,
-          hp: 0,
-          attack: 0,
-          defense: 0,
-          specialAttack: 0,
-          specialDefense: 0,
-          speed: 0,
-        );
-      }).toList();
+      return results.map((e) => PokemonModel.fromListResult(e as Map<String, dynamic>)).toList();
     } on DioException catch (e) {
       throw Exception('Failed to fetch Pokémon list: ${e.message}');
-    } catch (e) {
-      throw Exception('Unexpected error while fetching Pokémon list: $e');
     }
   }
 
@@ -56,7 +34,7 @@ class PokemonRemoteDatasourceImpl implements PokemonRemoteDatasource {
         '$_endpoint$id',
       );
 
-      return PokemonModel.fromJson(response.data!);
+      return PokemonModel.fromApi(response.data!);
     } on DioException catch (e) {
       throw Exception('Failed to fetch Pokémon detail: ${e.message}');
     } catch (e) {

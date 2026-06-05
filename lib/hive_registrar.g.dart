@@ -4,18 +4,18 @@
 
 import 'package:hive_ce/hive_ce.dart';
 import 'package:pokemon_app/features/auth/data/models/user_hive_model.dart';
-import 'package:pokemon_app/features/pokemon/data/models/pokemon_hive_model.dart';
+import 'package:pokemon_app/features/pokemon/data/models/pokemon_model.dart';
 
 extension HiveRegistrar on HiveInterface {
   void registerAdapters() {
-    registerAdapter(PokemonHiveModelAdapter());
+    registerAdapter(PokemonModelAdapter());
     registerAdapter(UserHiveModelAdapter());
   }
 }
 
 extension IsolatedHiveRegistrar on IsolatedHiveInterface {
   void registerAdapters() {
-    registerAdapter(PokemonHiveModelAdapter());
+    registerAdapter(PokemonModelAdapter());
     registerAdapter(UserHiveModelAdapter());
   }
 }
