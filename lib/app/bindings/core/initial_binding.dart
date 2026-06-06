@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:pokemon_app/app/app.dart' show AppController, FirebaseConfig;
-import 'package:pokemon_app/core/core.dart' show ConnectivityService, DioClient;
+import 'package:pokemon_app/app/app.dart' show AppController;
+import 'package:pokemon_app/core/core.dart' show ConnectivityService, DioClient, FirebaseService;
 import 'package:pokemon_app/features/auth/data/data.dart'
     show
         AuthLocalDatasource,
@@ -32,15 +32,10 @@ class InitialBinding extends Bindings {
 
       // AUTH DATA SOURCES
       ..lazyPut<AuthRemoteDatasource>(
-        () => AuthRemoteDatasourceImpl(
-          firebaseAuth: FirebaseConfig.auth,
-        ),
+        () => AuthRemoteDatasourceImpl(firebaseAuth: FirebaseService.auth),
         fenix: true,
       )
-      ..lazyPut<AuthLocalDatasource>(
-        AuthLocalDatasourceImpl.new,
-        fenix: true,
-      )
+      ..lazyPut<AuthLocalDatasource>(AuthLocalDatasourceImpl.new, fenix: true)
 
       // MAPPERS
       ..lazyPut<UserMapper>(UserMapper.new, fenix: true)
