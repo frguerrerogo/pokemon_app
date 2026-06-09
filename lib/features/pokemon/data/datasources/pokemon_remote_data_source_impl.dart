@@ -4,7 +4,7 @@ import 'package:pokemon_app/features/pokemon/data/data.dart'
     show PokemonModel, PokemonRemoteDatasource;
 
 class PokemonRemoteDatasourceImpl implements PokemonRemoteDatasource {
-  PokemonRemoteDatasourceImpl(this._dioClient);
+  PokemonRemoteDatasourceImpl({required DioClient dioClient}) : _dioClient = dioClient;
 
   final DioClient _dioClient;
   static const String _endpoint = 'pokemon/';

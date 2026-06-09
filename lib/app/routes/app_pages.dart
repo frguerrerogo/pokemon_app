@@ -28,6 +28,11 @@ class AppPages {
       binding: RegisterBinding(),
     ),
     GetPage(
+      name: AppRoutes.passwordRecovery,
+      page: () => const PasswordRecoveryScreen(),
+      binding: PasswordRecoveryBinding(),
+    ),
+    GetPage(
       name: AppRoutes.home,
       page: () => const HomeScreen(),
       binding: HomeBinding(),
@@ -36,11 +41,6 @@ class AppPages {
       name: AppRoutes.detail,
       page: () => const DetailScreen(),
       binding: DetailBinding(),
-    ),
-    GetPage(
-      name: AppRoutes.passwordRecovery,
-      page: () => const PasswordRecoveryScreen(),
-      binding: PasswordRecoveryBinding(),
     ),
   ];
 }

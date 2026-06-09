@@ -9,5 +9,5 @@ class FirebaseService {
     );
   }
 
-  static FirebaseAuth get auth => FirebaseAuth.instance;
+  FirebaseAuth get auth => FirebaseAuth.instance;
 }
