@@ -127,7 +127,8 @@ class _LogoutButton extends StatelessWidget {
           ElevatedButton(
             onPressed: () async {
               Get.back<void>();
-              controller.logout();
+
+              await controller.logout();
               await Get.offAllNamed<void>(AppRoutes.login);
             },
             style: ElevatedButton.styleFrom(

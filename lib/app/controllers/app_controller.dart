@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
+import 'package:pokemon_app/app/app.dart' show AppRoutes;
 import 'package:pokemon_app/app/controllers/app_state.dart';
-import 'package:pokemon_app/app/routes/app_routes.dart';
-import 'package:pokemon_app/core/core.dart';
-import 'package:pokemon_app/features/auth/domain/domain.dart';
+import 'package:pokemon_app/core/core.dart' show NoParams;
+import 'package:pokemon_app/features/auth/domain/domain.dart' show GetSessionUseCase, UserEntity;
 
 class AppController extends GetxController {
   AppController({

@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:pokemon_app/app/app.dart' show AppController;
 import 'package:pokemon_app/app/routes/app_routes.dart';
 import 'package:pokemon_app/core/core.dart' show ConnectivityService;
+import 'package:pokemon_app/features/auth/domain/domain.dart' show LogoutUseCase;
 import 'package:pokemon_app/features/pokemon/domain/domain.dart'
     show GetPokemonsUseCase, GetPokemonsUseCaseParams, PokemonEntity;
 import 'package:pokemon_app/features/pokemon/presentation/presentation.dart'
@@ -11,10 +12,12 @@ class HomeController extends GetxController {
   HomeController({
     required this.getPokemonsUseCase,
     required this.connectivityService,
+    required this.logoutUseCase,
   });
 
   final GetPokemonsUseCase getPokemonsUseCase;
   final ConnectivityService connectivityService;
+  final LogoutUseCase logoutUseCase;
 
   final Rx<HomeState> state = const HomeState().obs;
 
@@ -101,8 +104,9 @@ class HomeController extends GetxController {
     await Get.toNamed<void>(AppRoutes.detail, arguments: pokemon);
   }
 
-  void logout() {
+  Future<void> logout() async {
     Get.find<AppController>().clearUser();
+    await logoutUseCase();
   }
 
   void _listenConnectivity() {

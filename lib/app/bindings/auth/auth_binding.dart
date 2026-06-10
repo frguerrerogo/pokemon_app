@@ -9,6 +9,7 @@ import 'package:pokemon_app/features/auth/data/data.dart'
         AuthRepositoryImpl,
         UserHiveMapper,
         UserMapper;
+import 'package:pokemon_app/features/auth/domain/domain.dart' show LogoutUseCase;
 import 'package:pokemon_app/features/auth/domain/repositories/auth_repository.dart';
 import 'package:pokemon_app/features/auth/domain/usecases/get_session_usecase.dart';
 
@@ -23,48 +24,55 @@ class AuthBinding extends Bindings {
 
   void _datasources() {
     Get
-      ..put<AuthRemoteDatasource>(
-        AuthRemoteDatasourceImpl(
+      ..lazyPut<AuthRemoteDatasource>(
+        () => AuthRemoteDatasourceImpl(
           firebaseAuth: Get.find<FirebaseService>().auth,
         ),
-        permanent: true,
+        fenix: true,
       )
-      ..put<AuthLocalDatasource>(
-        AuthLocalDatasourceImpl(),
-        permanent: true,
+      ..lazyPut<AuthLocalDatasource>(
+        AuthLocalDatasourceImpl.new,
+        fenix: true,
       );
   }
 
   void _mappers() {
     Get
-      ..put<UserMapper>(
-        UserMapper(),
-        permanent: true,
+      ..lazyPut<UserMapper>(
+        UserMapper.new,
+        fenix: true,
       )
-      ..put<UserHiveMapper>(
-        UserHiveMapper(),
-        permanent: true,
+      ..lazyPut<UserHiveMapper>(
+        UserHiveMapper.new,
+        fenix: true,
       );
   }
 
   void _repositories() {
-    Get.put<AuthRepository>(
-      AuthRepositoryImpl(
+    Get.lazyPut<AuthRepository>(
+      () => AuthRepositoryImpl(
         authRemoteDataSource: Get.find(),
         authLocalDatasource: Get.find(),
         userMapper: Get.find(),
         userHiveMapper: Get.find(),
       ),
-      permanent: true,
+      fenix: true,
     );
   }
 
   void _useCases() {
-    Get.put<GetSessionUseCase>(
-      GetSessionUseCase(
-        authRepository: Get.find(),
-      ),
-      permanent: true,
-    );
+    Get
+      ..lazyPut<GetSessionUseCase>(
+        () => GetSessionUseCase(
+          authRepository: Get.find(),
+        ),
+        fenix: true,
+      )
+      ..lazyPut<LogoutUseCase>(
+        () => LogoutUseCase(
+          authRepository: Get.find(),
+        ),
+        fenix: true,
+      );
   }
 }

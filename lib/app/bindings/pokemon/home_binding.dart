@@ -8,6 +8,7 @@ class HomeBinding extends Bindings {
       () => HomeController(
         getPokemonsUseCase: Get.find(),
         connectivityService: Get.find(),
+        logoutUseCase: Get.find(),
       ),
     );
   }
